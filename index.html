@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FFFBF5">
+  <title>My3DBuild — Design Your Building in 3D</title>
+  <meta name="description" content="Design your dream garden building in 3D. Visualise sheds, workshops, garden rooms and more with our interactive configurator. Built by real craftsmen.">
+
+  <!-- Fonts: matching Grow Cabin / dashboard feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "My3DBuild",
+    "description": "Interactive 3D building configurator for garden buildings, sheds, workshops and more.",
+    "url": "https://my3dbuild.co.uk",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">My<strong>3D</strong>Build</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <a href="#configurator" class="nav-link">Design</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#buildings" class="nav-link">Buildings</a>
+        <a href="#contact" class="nav-link">Get In Touch</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Interactive 3D Configurator</p>
+        <h1 class="hero-title">Design Your<br>Building in 3D</h1>
+        <p class="hero-subtitle">See exactly what you're getting before a single piece of timber is cut. Our parametric configurator lets you explore dimensions, materials, doors, windows and more — all in real-time 3D.</p>
+        <div class="hero-actions">
+          <a href="#configurator" class="btn btn-primary">Start Designing</a>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">mm</span>
+            <span class="stat-label">Precision</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">∞</span>
+            <span class="stat-label">Combinations</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">3D</span>
+            <span class="stat-label">Real-time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONFIGURATOR EMBED ===== -->
+  <section class="configurator-section" id="configurator">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Try It Now</p>
+        <h2 class="section-title">Your Building, Your Way</h2>
+        <p class="section-subtitle">Adjust every dimension. Change materials. Add doors and windows. Watch it update instantly.</p>
+      </div>
+      <div class="configurator-wrap">
+        <div class="configurator-frame">
+          <iframe
+            src="https://andrewsgparsons-source.github.io/Parametric-shed2-staging/"
+            title="3D Building Configurator"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="configurator-hint">💡 Drag to rotate · Scroll to zoom · Use controls to customise</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Simple Process</p>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Choose Your Building</h3>
+          <p class="step-desc">Start with a shed, workshop, garden room, studio or garage. Pick the type that suits your needs.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Customise Everything</h3>
+          <p class="step-desc">Set exact dimensions, choose your roof style, add doors and windows, pick your cladding and insulation options.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">See It in 3D</h3>
+          <p class="step-desc">Watch your building come to life in real-time. Rotate, zoom, and inspect every detail before committing.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Get Your Quote</h3>
+          <p class="step-desc">Happy with your design? Share it with us and we'll provide a detailed quote based on your exact specification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Built Different</p>
+        <h2 class="section-title">Not Just a Pretty Picture</h2>
+        <p class="section-subtitle">Our configurator models real construction. Every stud, every rafter, every joint — exactly as it would be built.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <h3 class="feature-title">Millimetre Precision</h3>
+          <p class="feature-desc">Every dimension is exact. What you see is what gets built — no surprises, no approximations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏗️</div>
+          <h3 class="feature-title">Real Construction Logic</h3>
+          <p class="feature-desc">The model follows actual building methods. Stud spacing, plate heights, roof geometry — all structurally accurate.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🪟</div>
+          <h3 class="feature-title">Doors & Windows</h3>
+          <p class="feature-desc">Add, move, and resize openings. Choose from single doors, double doors, barn doors, and multiple window styles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <h3 class="feature-title">Multiple Roof Styles</h3>
+          <p class="feature-desc">Apex, pent, hipped — switch between roof types and see how they change the look and interior space.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧱</div>
+          <h3 class="feature-title">Material Choices</h3>
+          <p class="feature-desc">Explore different cladding options, insulation levels, and finishes. See exactly how your choices affect the build.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3 class="feature-title">Works Everywhere</h3>
+          <p class="feature-desc">Desktop, tablet, or phone — the configurator runs smoothly in any modern browser. No apps to install.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUILDING TYPES ===== -->
+  <section class="buildings" id="buildings">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What Can You Design?</p>
+        <h2 class="section-title">Buildings for Every Purpose</h2>
+      </div>
+      <div class="buildings-grid">
+        <div class="building-card">
+          <div class="building-icon">🏡</div>
+          <h3>Garden Rooms</h3>
+          <p>Extra living space in your garden. Insulated, lined, and ready for year-round use.</p>
+        </div>
+        <div class="building-card">
+          <div class="building-icon">🔧</div>
+          <h3>Workshops</h3>
+          <p>Purpose-built for hands-on work. Strong floors, wide doors, power-ready.</p>
+        </div>
+        <div class="building-card">
+          <div class="building-icon">🏠</div>
+          <h3>Sheds & Storage</h3>
+          <p>From compact tool stores to large garden sheds. Exactly the size you need.</p>
+        </div>
+        <div class="building-card">
+          <div class="building-icon">🎨</div>
+          <h3>Studios</h3>
+          <p>Creative spaces with natural light. Perfect for art, music, or a home office.</p>
+        </div>
+        <div class="building-card">
+          <div class="building-icon">🚗</div>
+          <h3>Garages</h3>
+          <p>Single or double. Designed to your vehicle dimensions with room to spare.</p>
+        </div>
+        <div class="building-card">
+          <div class="building-icon">🪵</div>
+          <h3>Log Stores</h3>
+          <p>Open-fronted, ventilated, and sized to your firewood needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CRAFTSMANSHIP ===== -->
+  <section class="craftsmanship">
+    <div class="container">
+      <div class="craft-inner">
+        <div class="craft-content">
+          <p class="section-eyebrow">Craftsmanship Meets Technology</p>
+          <h2 class="section-title">Designed by Software,<br>Built by Hand</h2>
+          <p>Every building designed in our configurator is constructed by experienced craftsmen using traditional joinery techniques and quality timber. The technology helps you visualise — the skill makes it real.</p>
+          <ul class="craft-list">
+            <li>Douglas fir structural frames</li>
+            <li>Traditional mortise and tenon joints</li>
+            <li>Precision-cut from your exact specification</li>
+            <li>Built on-site by skilled carpenters</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="section-title">Ready to Design Your Building?</h2>
+        <p class="section-subtitle">Jump into the configurator and start exploring. When you're happy with your design, share it with us for a detailed quote.</p>
+        <div class="cta-actions">
+          <a href="#configurator" class="btn btn-primary btn-lg">Open the Configurator</a>
+        </div>
+        <div class="cta-contact">
+          <p>Prefer to talk? Get in touch directly:</p>
+          <a href="mailto:hello@my3dbuild.co.uk" class="contact-link">hello@my3dbuild.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">My<strong>3D</strong>Build</span>
+        <p class="footer-tagline">Design your building in 3D</p>
+      </div>
+      <div class="footer-links">
+        <a href="#configurator">Configurator</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#buildings">Buildings</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2026 My3DBuild. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
