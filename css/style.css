@@ -696,3 +696,38 @@ a:hover { color: var(--accent-light); }
 
   .configurator-frame { padding-bottom: 100%; }
 }
+
+/* ===== MOBILE CONFIGURATOR: Full-screen launch instead of iframe ===== */
+.configurator-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .configurator-desktop { display: none; }
+  .configurator-mobile { display: block; }
+}
+
+.configurator-mobile-card {
+  text-align: center;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, #f8f4ef 0%, #fff 100%);
+  border-radius: 16px;
+  border: 2px solid #e8e0d8;
+}
+
+.configurator-mobile-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.configurator-mobile-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--text, #2c2c2c);
+}
+
+.configurator-mobile-card p {
+  color: var(--text-light, #666);
+  margin-bottom: 24px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}

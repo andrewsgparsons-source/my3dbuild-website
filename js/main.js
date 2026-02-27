@@ -40,9 +40,19 @@
     });
   }
 
+  // ===== MOBILE: REDIRECT CONFIGURATOR LINKS TO FULL PAGE =====
+  var CONFIGURATOR_URL = 'https://andrewsgparsons-source.github.io/Parametric-shed2-staging/configurator.html';
+  var isMobile = window.innerWidth <= 768 || navigator.maxTouchPoints > 1;
+
   // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
+      // On mobile, redirect configurator links to the full standalone page
+      if (isMobile && this.getAttribute('href') === '#configurator') {
+        e.preventDefault();
+        window.location.href = CONFIGURATOR_URL;
+        return;
+      }
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();

@@ -91,7 +91,8 @@
         <h2 class="section-title">Your Building, Your Way</h2>
         <p class="section-subtitle">Adjust every dimension. Change materials. Add doors and windows. Watch it update instantly.</p>
       </div>
-      <div class="configurator-wrap">
+      <!-- Desktop: show iframe embed -->
+      <div class="configurator-wrap configurator-desktop">
         <div class="configurator-frame">
           <iframe
             src="https://andrewsgparsons-source.github.io/Parametric-shed2-staging/"
@@ -101,6 +102,15 @@
           ></iframe>
         </div>
         <p class="configurator-hint">💡 Drag to rotate · Scroll to zoom · Use controls to customise</p>
+      </div>
+      <!-- Mobile: show full-screen launch button instead of iframe -->
+      <div class="configurator-wrap configurator-mobile">
+        <div class="configurator-mobile-card">
+          <div class="configurator-mobile-icon">🏠</div>
+          <h3>Ready to Design?</h3>
+          <p>Our 3D configurator works best in full screen on mobile. Tap below to launch it.</p>
+          <a href="https://andrewsgparsons-source.github.io/Parametric-shed2-staging/configurator.html" class="btn btn-primary btn-lg">Launch 3D Configurator</a>
+        </div>
       </div>
     </div>
   </section>
