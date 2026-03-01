@@ -89,7 +89,7 @@
     </div>
   </section>
 
-  <!-- ===== CONFIGURATOR EMBED ===== -->
+  <!-- ===== CONFIGURATOR SECTION ===== -->
   <section class="configurator-section" id="configurator">
     <div class="container">
       <div class="section-header">
@@ -97,29 +97,35 @@
         <h2 class="section-title">Your Building, Your Way</h2>
         <p class="section-subtitle">Adjust every dimension. Change materials. Add doors and windows. Watch it update instantly.</p>
       </div>
-      <!-- Desktop: show iframe embed -->
-      <div class="configurator-wrap configurator-desktop">
-        <div class="configurator-frame">
-          <iframe
-            src="https://andrewsgparsons-source.github.io/Parametric-shed2-staging/"
-            title="3D Building Configurator"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-            loading="lazy"
-          ></iframe>
-        </div>
-        <p class="configurator-hint">💡 Drag to rotate · Scroll to zoom · Use controls to customise</p>
-      </div>
-      <!-- Mobile: show full-screen launch button instead of iframe -->
-      <div class="configurator-wrap configurator-mobile">
-        <div class="configurator-mobile-card">
-          <div class="configurator-mobile-icon">🏠</div>
+      <!-- Launch card (desktop + mobile) -->
+      <div class="configurator-wrap">
+        <div class="configurator-launch-card">
+          <div class="configurator-launch-icon">🏠</div>
           <h3>Ready to Design?</h3>
-          <p>Our 3D configurator works best in full screen on mobile. Tap below to launch it.</p>
-          <a href="https://andrewsgparsons-source.github.io/Parametric-shed2-staging/configurator.html" class="btn btn-primary btn-lg">Launch 3D Configurator</a>
+          <p>Jump into the full 3D configurator. Choose your building type, set exact dimensions, pick materials — and see it all come to life in real time.</p>
+          <button class="btn btn-primary btn-lg" id="launchConfiguratorBtn">Launch 3D Configurator</button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===== FULLSCREEN CONFIGURATOR OVERLAY ===== -->
+  <div class="configurator-fullscreen" id="configuratorFullscreen">
+    <div class="configurator-fullscreen-header">
+      <button class="configurator-back-btn" id="configuratorBackBtn">
+        <span class="back-arrow">←</span>
+        <span class="back-text">Back to My3DBuild</span>
+      </button>
+      <span class="configurator-fullscreen-logo">
+        <span class="logo-icon">⬡</span> My<strong>3D</strong>Build
+      </span>
+    </div>
+    <iframe
+      id="configuratorIframe"
+      title="3D Building Configurator"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+    ></iframe>
+  </div>
 
   <!-- ===== HOW IT WORKS ===== -->
   <section class="how-it-works" id="how-it-works">
@@ -309,7 +315,7 @@
         <h2 class="section-title">Ready to Design Your Building?</h2>
         <p class="section-subtitle">Jump into the configurator and start exploring. When you're happy with your design, share it with us for a detailed quote.</p>
         <div class="cta-actions">
-          <a href="#configurator" class="btn btn-primary btn-lg">Open the Configurator</a>
+          <button class="btn btn-primary btn-lg" id="ctaLaunchBtn">Open the Configurator</button>
         </div>
         <div class="cta-contact">
           <p>Prefer to talk? Get in touch directly:</p>

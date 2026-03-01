@@ -4,26 +4,27 @@
 (function() {
   'use strict';
 
+  // ===== CONFIG =====
+  var CONFIGURATOR_URL = 'https://andrewsgparsons-source.github.io/Parametric-shed2-staging/configurator.html';
+  var isMobile = window.innerWidth <= 768 || navigator.maxTouchPoints > 1;
+
   // ===== HEADER SCROLL EFFECT =====
-  const header = document.querySelector('.header');
-  let lastScroll = 0;
+  var header = document.querySelector('.header');
 
   function onScroll() {
-    const scrollY = window.scrollY;
-    if (scrollY > 20) {
+    if (window.scrollY > 20) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-    lastScroll = scrollY;
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load
+  onScroll();
 
   // ===== MOBILE NAV TOGGLE =====
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
 
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', function() {
@@ -31,7 +32,6 @@
       navToggle.classList.toggle('active');
     });
 
-    // Close nav when a link is clicked
     mainNav.querySelectorAll('.nav-link').forEach(function(link) {
       link.addEventListener('click', function() {
         mainNav.classList.remove('open');
@@ -40,20 +40,72 @@
     });
   }
 
-  // ===== MOBILE: REDIRECT CONFIGURATOR LINKS TO FULL PAGE =====
-  var CONFIGURATOR_URL = 'https://andrewsgparsons-source.github.io/Parametric-shed2-staging/configurator.html';
-  var isMobile = window.innerWidth <= 768 || navigator.maxTouchPoints > 1;
+  // ===== FULLSCREEN CONFIGURATOR =====
+  var fullscreenEl = document.getElementById('configuratorFullscreen');
+  var iframe = document.getElementById('configuratorIframe');
+  var launchBtn = document.getElementById('launchConfiguratorBtn');
+  var backBtn = document.getElementById('configuratorBackBtn');
+  var iframeLoaded = false;
+
+  function openConfigurator() {
+    if (isMobile) {
+      // Mobile: navigate directly (no iframe overhead)
+      window.location.href = CONFIGURATOR_URL;
+      return;
+    }
+
+    // Desktop: fullscreen takeover
+    if (!iframeLoaded) {
+      iframe.src = CONFIGURATOR_URL;
+      iframeLoaded = true;
+    }
+    fullscreenEl.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeConfigurator() {
+    fullscreenEl.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (launchBtn) {
+    launchBtn.addEventListener('click', openConfigurator);
+  }
+
+  // Bottom CTA button
+  var ctaLaunchBtn = document.getElementById('ctaLaunchBtn');
+  if (ctaLaunchBtn) {
+    ctaLaunchBtn.addEventListener('click', openConfigurator);
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener('click', closeConfigurator);
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && fullscreenEl.classList.contains('active')) {
+      closeConfigurator();
+    }
+  });
 
   // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
-      // On mobile, redirect configurator links to the full standalone page
-      if (isMobile && this.getAttribute('href') === '#configurator') {
+      var href = this.getAttribute('href');
+
+      // Configurator links → open fullscreen
+      if (href === '#configurator') {
         e.preventDefault();
-        window.location.href = CONFIGURATOR_URL;
+        // Scroll to the section first so they see the launch card
+        var section = document.getElementById('configurator');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
         return;
       }
-      var target = document.querySelector(this.getAttribute('href'));
+
+      var target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
