@@ -137,4 +137,26 @@
     });
   }
 
+  // ===== HASH ROUTING (Direct-to-Configurator Links) =====
+  // If URL has #design, #build, or #start → auto-launch configurator
+  // Use case: Google Business "Book Now" link → https://my3dbuild.co.uk#design
+  function checkHashOnLoad() {
+    var hash = window.location.hash.toLowerCase();
+    var directLaunchHashes = ['#design', '#build', '#start', '#create'];
+    
+    if (directLaunchHashes.indexOf(hash) !== -1) {
+      // Small delay to ensure DOM ready + smooth UX
+      setTimeout(function() {
+        openConfigurator();
+      }, 300);
+    }
+  }
+
+  // Run on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkHashOnLoad);
+  } else {
+    checkHashOnLoad();
+  }
+
 })();
