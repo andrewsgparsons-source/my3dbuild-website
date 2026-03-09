@@ -684,6 +684,9 @@ a:hover { color: var(--accent-light); }
   .hero-stats { flex-direction: row; gap: 20px; flex-wrap: wrap; justify-content: center; }
   .hero-actions { margin-bottom: 24px; }
 
+  /* Tighten configurator section so launch button is visible without scrolling */
+  .configurator-section .section-header { margin-bottom: 28px; }
+  .configurator-section { padding: 40px 0; }
 }
 
 /* ===== CONFIGURATOR LAUNCH CARD ===== */

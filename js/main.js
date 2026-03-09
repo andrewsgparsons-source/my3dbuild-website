@@ -94,13 +94,16 @@
     anchor.addEventListener('click', function(e) {
       var href = this.getAttribute('href');
 
-      // Configurator links → open fullscreen
+      // Configurator links → scroll to launch card (not section top)
+      // so the "Launch 3D Configurator" button is immediately visible on mobile
       if (href === '#configurator') {
         e.preventDefault();
-        // Scroll to the section first so they see the launch card
-        var section = document.getElementById('configurator');
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var launchCard = document.querySelector('.configurator-launch-card');
+        if (launchCard) {
+          launchCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          var section = document.getElementById('configurator');
+          if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         return;
       }
